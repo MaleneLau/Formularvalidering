@@ -1,0 +1,69 @@
+document.getElementById('registrationForm').addEventListener('submit', function (e) {
+    e.preventDefault(); 
+
+    //henter værdierne fra inputfelterne
+    let name = document.getElementById('name').value.trim();
+    let password = document.getElementById('password').value.trim();
+    let confirmPassword = document.getElementById('confirmPassword').value.trim();
+    let email = document.getElementById('email').value.trim();
+    let telefon = document.getElementById('telefon').value.trim();
+
+    //henter Error meddelelseselementer
+    let nameError = document.getElementById('nameError');
+    let passwordError = document.getElementById('passwordError');
+    let emailError = document.getElementById('emailError');
+    let telefonError = document.getElementById('telefonError');
+    let confirmPasswordError = document.getElementById('confirmPasswordError');
+
+    //initialisér gyldighed
+    let isValid = true;
+
+    //Tjekker for navn
+    if (name.length <2) {
+        nameError.textContent = "Navn skal være mindst 2 karakterer. ";
+        nameError.style.display = 'block'; 
+        isValid = false; 
+    } else {
+        nameError.style.display = 'none';
+    }
+
+    // Tjek for adgangskode 
+    const passwordPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,})/; 
+    if (!password.match(passwordPattern)) {
+        passwordError.textContent = "Adgangskoden skal være mindst 8 karakterer, indeholde mindst 1 stort bogstav og 1 specialtegn !@#$%^&*."; 
+        passwordError.style.display = 'block';
+        isValid = false;
+    } else {
+        passwordError.style.display = 'none'; 
+    }
+
+    if (password !== confirmPassword) {
+        confirmPasswordError.textContent = "Adgangskoderne stemmer ikke overens."
+        confirmPasswordError.style.display = 'block'
+        isValid = false; 
+    } else {
+        confirmPasswordError.style.display = 'none'; 
+    }
+
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!email.match(emailPattern)) {
+        emailError.textContent = "Indtast en gyldig e-mail";
+        emailError.style.display = 'block'; 
+        isValid = false;
+    } else {
+        emailError.style.display = 'none'
+    }
+
+    const telefonPattern = /^[0-9]{8}$/;
+    if (!telefon.match(telefonPattern)) {
+        telefonError.textContent = "Telefonnummeret er ugyldigt"
+        telefonError.style.display = 'block';
+        isValid = false;
+    } else {
+        telefonError.style.display = 'none';
+    }
+
+    if (isValid) {
+        alert("Formularen er korrekt udfyldt!"); 
+    }
+})

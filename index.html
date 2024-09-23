@@ -5,8 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formularvalidering</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
-    
+    <div class="container">
+        <h1>Registreringsformular</h1>
+        <form id="registrationForm">
+            <label for="name">Navn:</label>
+            <input type="text" name="name" id="name" placeholder="Indtast dit navn">
+            <span class="error-message" id="nameError"></span>
+
+            <label for="password">Adgangskode:</label>
+            <input type="password" name="password" id="password" placeholder="Indtast din adgangskode">
+            <span class="error-message" id="passwordError"></span>
+
+            
+
+            <label for="confirmPassword">Gentag Adgangskode:</label>
+            <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Gentag din adgangskode">
+            <span class="error-message" id="confirmPasswordError"></span>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Indtast din E-mail">
+            <span class="error-message" id="emailError"></span>
+
+            <label for="tlf">Telefon-nummer:</label>
+            <input type="tlf" name="telefon" id="telefon" placeholder="Indtast dit telefon-nummer">
+            <span class="error-message" id="telefonError"></span>
+
+            <button type="submit">Registrer</button>
+            
+        </form>
+    </div>
 </body>
 </html>
