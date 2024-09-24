@@ -45,6 +45,42 @@ input {
     font-size: 16px;
 }
 
+.password-container {
+    position: relative;
+}
+
+.confirmPassword-container {
+    position: relative;
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 40px; 
+}
+
+.confirmPassword-container input {
+    width: 100%;
+    padding-right: 40px;
+}
+
+
+#iconPassword {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-70%); 
+    cursor: pointer;
+}
+
+#iconConfirmPassword {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-70%); 
+    cursor: pointer;
+}
+
+
 button {
     padding: 10px;
     background-color: #28a745;

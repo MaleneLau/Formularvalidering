@@ -6,6 +6,7 @@
     <title>Formularvalidering</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
+    <script src="https://kit.fontawesome.com/2fd9f648ed.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
@@ -16,20 +17,30 @@
             <span class="error-message" id="nameError"></span>
 
             <label for="password">Adgangskode:</label>
-            <input type="password" name="password" id="password" placeholder="Indtast din adgangskode">
+            <div class="password-container">
+                <input type="password" name="password" id="password" placeholder="Indtast din adgangskode">
+                <div id="iconPassword">
+                    <i class="fa-regular fa-eye" id="showIcon"></i>
+                    <i class="fa-regular fa-eye-slash" id="hideIcon" style="display: none;"></i>
+                </div>
+            </div>
             <span class="error-message" id="passwordError"></span>
 
-            
-
-            <label for="confirmPassword">Gentag Adgangskode:</label>
-            <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Gentag din adgangskode">
+            <label for="confirmPassword">Gentag adgangskode:</label>
+            <div class="confirmPassword-container">
+                <input type="password" name="password" id="confirmPassword" placeholder="Indtast din adgangskode">
+                <div id="iconConfirmPassword">
+                    <i class="fa-regular fa-eye" id="confirmShowIcon"></i>
+                    <i class="fa-regular fa-eye-slash" id="confirmHideIcon" style="display: none;"></i>
+                </div>
+            </div>
             <span class="error-message" id="confirmPasswordError"></span>
 
             <label for="email">E-mail:</label>
             <input type="email" id="email" name="email" placeholder="Indtast din E-mail">
             <span class="error-message" id="emailError"></span>
 
-            <label for="tlf">Telefon-nummer:</label>
+            <label for="telefon">Telefon-nummer:</label>
             <input type="tlf" name="telefon" id="telefon" placeholder="Indtast dit telefon-nummer">
             <span class="error-message" id="telefonError"></span>
 
