@@ -94,4 +94,4 @@ document.getElementById('iconConfirmPassword').addEventListener('click', functio
         confirmShowIcon.style.display = 'inline';
         confirmHideIcon.style.display = 'none';
     }
-});
+}); 
